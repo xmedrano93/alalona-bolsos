@@ -1,0 +1,34 @@
+[
+    {
+        "id":1,
+        "title":"Lona verde",
+        "price":600,
+        "pictureUrl":"../assets/product1.png",
+        "stock":5,
+        "alt":"Lona verde"
+    },
+    {
+        "id":2,
+        "title":"Lona amarilla",
+        "price":800,
+        "pictureUrl":"../assets/product2.jpg",
+        "stock":10,
+        "alt":"Lona amarilla"
+    },
+    {
+        "id":3,
+        "title":"Lona azul",
+        "price":1000,
+        "pictureUrl":"../assets/product3.jpg",
+        "stock":15,
+        "alt":"Lona azul"
+    },
+    {
+        "id":4,
+        "title":"Lona roja",
+        "price":1200,
+        "pictureUrl":"../assets/product4.jpg",
+        "stock":20,
+        "alt":"Lona roja"
+    }
+]

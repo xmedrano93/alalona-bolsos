@@ -3,7 +3,6 @@ import {useState} from "react";
 function ItemCount ({stock}) {
 
     const [count, setCount] = useState (0)
-    const available = {stock}
 
     const add = () =>{
         if(count < stock){
@@ -18,9 +17,12 @@ function ItemCount ({stock}) {
 
     return(
         <>
-            <button onClick={add}>+</button>
-            <p>{count}</p>
-            <button onClick={less}>-</button>
+            <div>
+                <button onClick={add}>+</button>
+                <p className="d-inline-block m-3 pl-4 pr-4" >{count}</p>
+                <button onClick={less}>-</button>
+            </div>
+            
         </>
     )
 }
