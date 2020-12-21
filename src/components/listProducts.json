@@ -3,9 +3,10 @@
         "id":1,
         "title":"Lona verde",
         "price":600,
-        "pictureUrl":"../assets/product1.png",
+        "pictureUrl":"../assets/product1.jpg",
         "stock":5,
-        "alt":"Lona verde"
+        "alt":"Lona verde",
+        "description":"Producto de tela, ideal para salidas de picnic. Muy cómodo para usarlo en todo momento. Gran capacidad de almacenaje"
     },
     {
         "id":2,

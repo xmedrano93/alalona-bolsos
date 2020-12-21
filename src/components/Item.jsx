@@ -8,7 +8,7 @@ function Item ({stock, title, price, key, pictureUrl, alt}){
 
     return(
         <>
-            <div key={key} className="card d-inline-block m-3" style={{width: "40vh"}}>
+            <div  className="card d-inline-block m-3" style={{width: "40vh"}}>
                 <img className="card-img-top m-2 p-2" src={pictureUrl} alt={alt}/>
                     <div className="card-body">
                         <h2 className="card-title">{title} </h2>
