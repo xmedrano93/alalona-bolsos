@@ -1,6 +1,7 @@
 [
     {
-        "id":1,
+        "id":0,
+        "category":"lona",
         "title":"Lona verde",
         "price":600,
         "pictureUrl":"../assets/product1.jpg",
@@ -9,27 +10,94 @@
         "description":"Producto de tela, ideal para salidas de picnic. Muy cómodo para usarlo en todo momento. Gran capacidad de almacenaje"
     },
     {
-        "id":2,
-        "title":"Lona amarilla",
+        "id":1,
+        "category":"lona",
+        "title":"Lona rosada",
         "price":800,
         "pictureUrl":"../assets/product2.jpg",
         "stock":10,
-        "alt":"Lona amarilla"
+        "alt":"Lona rosado",
+        "description":"Producto de tela, ideal para salidas de picnic. Muy cómodo para usarlo en todo momento. Gran capacidad de almacenaje"
+        
     },
     {
-        "id":3,
-        "title":"Lona azul",
+        "id":2,
+        "category":"lona",
+        "title":"Lona amarilla",
         "price":1000,
         "pictureUrl":"../assets/product3.jpg",
         "stock":15,
-        "alt":"Lona azul"
+        "alt":"Lona amarillo",
+        "description":"Producto de tela, ideal para salidas de picnic. Muy cómodo para usarlo en todo momento. Gran capacidad de almacenaje"
     },
     {
-        "id":4,
-        "title":"Lona roja",
+        "id":3,
+        "category":"lona",
+        "title":"Lona azul",
         "price":1200,
         "pictureUrl":"../assets/product4.jpg",
         "stock":20,
-        "alt":"Lona roja"
+        "alt":"Lona azul",
+        "description":"Producto de tela, ideal para salidas de picnic. Muy cómodo para usarlo en todo momento. Gran capacidad de almacenaje"
+    },
+    {
+        "id":4,
+        "category":"lona",
+        "title":"Lona violeta",
+        "price":1200,
+        "pictureUrl":"../assets/product4.jpg",
+        "stock":20,
+        "alt":"Lona violeta",
+        "description":"Producto de tela, ideal para salidas de picnic. Muy cómodo para usarlo en todo momento. Gran capacidad de almacenaje"
+    },
+    {
+        "id":5,
+        "category":"lona",
+        "title":"Lona bordó",
+        "price":1200,
+        "pictureUrl":"../assets/product4.jpg",
+        "stock":20,
+        "alt":"Lona bordó",
+        "description":"Producto de tela, ideal para salidas de picnic. Muy cómodo para usarlo en todo momento. Gran capacidad de almacenaje"
+    },
+    {
+        "id":6,
+        "category":"mochila",
+        "title":"Mochila roja",
+        "price":1200,
+        "pictureUrl":"../assets/product4.jpg",
+        "stock":20,
+        "alt":"Mochila roja",
+        "description":"Producto de tela, ideal para salidas de picnic. Muy cómodo para usarlo en todo momento. Gran capacidad de almacenaje"
+    },
+    {
+        "id":7,
+        "category":"mochila",
+        "title":"Mochila azul",
+        "price":1200,
+        "pictureUrl":"../assets/product4.jpg",
+        "stock":20,
+        "alt":"Mochila azul",
+        "description":"Producto de tela, ideal para salidas de picnic. Muy cómodo para usarlo en todo momento. Gran capacidad de almacenaje"
+    },
+    {
+        "id":8,
+        "title":"Neceser verde",
+        "category":"neceser",
+        "price":1200,
+        "pictureUrl":"../assets/product4.jpg",
+        "stock":20,
+        "alt":"Neceser verde",
+        "description":"Producto de tela, ideal para salidas de picnic. Muy cómodo para usarlo en todo momento. Gran capacidad de almacenaje"
+    },
+    {
+        "id":9,
+        "category":"neceser",
+        "title":"Neceser azul",
+        "price":1200,
+        "pictureUrl":"../assets/product4.jpg",
+        "stock":20,
+        "alt":"Neceser azul",
+        "description":"Producto de tela, ideal para salidas de picnic. Muy cómodo para usarlo en todo momento. Gran capacidad de almacenaje"
     }
 ]

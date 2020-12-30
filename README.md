@@ -1,3 +1,9 @@
+El proyecto está basado en un emprendimiento de comercialización de bolsos, mochilas y neceseres ideales para picnic en plazas o este tipo de actividades. Los bolsos y mochilas se hacen lonas al abrirse para poder sentarse sobre ellas. Todo fabricado de forma artenasal.
+
+
+
+
+
 # Getting Started with Create React App
 
 This project was bootstrapped with [Create React App](https://github.com/facebook/create-react-app).

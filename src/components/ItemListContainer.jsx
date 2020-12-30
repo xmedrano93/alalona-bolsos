@@ -1,10 +1,10 @@
 import  ItemList from "./ItemList"
 
-function ItemListContainer (key) {
+function ItemListContainer () {
 
     return(
-    
-        <ItemList key={key} /> 
+        
+        <ItemList /> 
     
     );
 }

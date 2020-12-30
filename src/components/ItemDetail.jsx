@@ -1,19 +1,39 @@
-import imagenDetalle from "../assets/product1.jpg"
+import ItemCount from "./ItemCount"
+import {NavLink} from "react-router-dom"
 
-const ItemDetail = ({detail}) =>{
-    return(
-        detail.title?
-            <>
-                    <div className="card d-inline-block m-3 " style={{width: "90vh"}}>
-                            <img className="card-img-top p-2" src={imagenDetalle}/>
-                                <div className="card-body">
-                                    <h2 className="card-title">{detail.title} </h2>
-                                    <h5 className="card-title">${detail.price}</h5>
-                                    <h6 className="card-title">{detail.description}</h6>
-                                </div>
-                    </div>
-            </> :
-            <h3 className="text-center m-3">Estamos cargando el detalle del producto...</h3>
-    )
-}
+const ItemDetail = ({ detail }) => {
+
+    const onAdd = () =>{
+        alert("Se han agregado productos al carrito")
+    }
+
+  return detail.title ? (
+    <>
+      <div className="card d-inline-block m-3 " style={{ width: "20vw"}}>
+        <img className="card-img-top" src="https://placehold.it/300x300"/>
+        <div className="card-body">
+          <h2 className="card-title">{detail.title} </h2>
+          <h5 className="card-title">${detail.price}</h5>
+          <h6 className="card-title">{detail.description}</h6>
+        </div>
+        <h2 className="text-success d-inline-block m-2">
+          <ItemCount stock={detail.stock} />{" "}
+        </h2>
+        <div className="container m-2">
+          <div className="btn-toolbar">
+            <div className="btn-group">
+              <button onClick={onAdd} href="#" className="btn btn-primary d-block">
+                <NavLink to="#" className="text-white">
+                  Agregar al carrito
+                </NavLink>
+              </button>
+            </div>
+          </div>
+        </div>
+      </div>
+    </>
+  ) : (
+    <div className="align-items-center justify-content-center m-3 spinner-border" />
+  );
+};
 export default ItemDetail;

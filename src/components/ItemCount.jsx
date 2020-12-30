@@ -18,9 +18,9 @@ function ItemCount ({stock}) {
     return(
         <>
             <div>
-                <button onClick={add}>+</button>
+                <button onClick={less} className="btn btn-light">-</button>
                 <p className="d-inline-block m-3 pl-4 pr-4" >{count}</p>
-                <button onClick={less}>-</button>
+                <button onClick={add} className="btn btn-light">+</button>
             </div>
             
         </>

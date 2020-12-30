@@ -1,11 +1,13 @@
 import {useEffect, useState} from "react"
 import listProducts from "./listProducts.json"
 import Item from "./Item"
+import {useParams} from "react-router-dom"
 
 
 
-const ItemList = (key) =>{
+const ItemList = () =>{
 
+    const {categoryLink} = useParams();
     const [result, setResult] = useState([])
 
     const getProducts = new Promise((resolve) =>{
@@ -17,27 +19,56 @@ const ItemList = (key) =>{
 
     
     useEffect(() =>{
+        console.log(categoryLink)
         getProducts.then(itemMap =>{
             setResult(itemMap)}
-    )}, [])
-    
-    return(
-    result.length? 
-        <>
+            
+    )}, [categoryLink]);
 
-            {result.map(items =>(
+    if(categoryLink){
+    return(
+    result.length?
+     
+        <>
+            
+            {result.filter(item =>(item.category === categoryLink)).map(items =>(
                     <Item
-                    key={items.id}
                     title={items.title}
                     price={items.price}
                     stock={items.stock}
                     pictureUrl={items.pictureUrl}
                     alt={items.alt}
+                    id={items.id}
+                    categoryLink={categoryLink}
+                    key={items.id}
                     />
             ))
-            }
-        </> : <h3 className="text-center m-3">Estamos cargando los artículos...</h3> 
-    )
+            } 
+        </> 
+        :
+        <div className="align-items-center justify-content-center m-3 spinner-border" />
+    )}else{
+        return(
+            result.length?
+             
+                <>
+                    
+                    {result.map(items =>(
+                            <Item
+                            title={items.title}
+                            price={items.price}
+                            stock={items.stock}
+                            pictureUrl={items.pictureUrl}
+                            alt={items.alt}
+                            id={items.id}
+                            categoryLink={categoryLink}
+                            />
+                    ))
+                    } 
+                </> 
+                :
+                <div className="align-items-center justify-content-center m-3 spinner-border" />
+        )}
 }
 
 export default ItemList;
