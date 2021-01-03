@@ -3,6 +3,7 @@ import {BrowserRouter, Switch, Route} from "react-router-dom"
 import NavBarMenu from "./components/NavBarMenu"
 import ItemListContainer from "./components/ItemListContainer";
 import ItemDetailContainer from "./components/ItemDetailContainer"
+import Cart from "./components/Cart";
 
 
 function App() {
@@ -20,6 +21,9 @@ function App() {
             </Route>
             <Route path="/category/:categoryLink?">
               <ItemListContainer />
+            </Route>
+            <Route path="/cart">
+              <Cart />
             </Route>
           
         </Switch>

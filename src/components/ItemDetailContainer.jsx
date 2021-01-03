@@ -1,9 +1,18 @@
 import {useEffect, useState} from "react"
 import ItemDetail from "./ItemDetail"
 import listado from "./listProducts.json"
-import {useParams} from "react-router-dom"
+import {useParams, withRouter} from "react-router-dom"
 
-const ItemDetailContainer = () =>{
+
+const ItemDetailContainer = (propsCart) =>{
+
+    const {history} = propsCart;
+
+    const onAddCart = () =>{
+      
+      history.push("/cart")
+  }
+
     const {id_detail} = useParams();
     console.log(id_detail)
     const [detail, setDetail] = useState([])
@@ -19,11 +28,12 @@ const ItemDetailContainer = () =>{
                 setDetail(resultDetail)
             })
         },[])
+
     return(
         
-        <ItemDetail detail={detail} /> 
+        <ItemDetail detail={detail} onAddCart={onAddCart}/> 
      
     )
 }
 
-export default ItemDetailContainer;
+export default withRouter(ItemDetailContainer);

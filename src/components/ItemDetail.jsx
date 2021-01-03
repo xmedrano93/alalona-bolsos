@@ -1,16 +1,12 @@
 import ItemCount from "./ItemCount"
-import {NavLink} from "react-router-dom"
+import {withRouter} from "react-router-dom"
 
-const ItemDetail = ({ detail }) => {
-
-    const onAdd = () =>{
-        alert("Se han agregado productos al carrito")
-    }
+const ItemDetail = ({detail, onAddCart}) => {
 
   return detail.title ? (
     <>
       <div className="card d-inline-block m-3 " style={{ width: "20vw"}}>
-        <img className="card-img-top" src="https://placehold.it/300x300"/>
+        <img className="card-img-top" src="https://placehold.it/300x300" alt="img test"/>
         <div className="card-body">
           <h2 className="card-title">{detail.title} </h2>
           <h5 className="card-title">${detail.price}</h5>
@@ -22,10 +18,10 @@ const ItemDetail = ({ detail }) => {
         <div className="container m-2">
           <div className="btn-toolbar">
             <div className="btn-group">
-              <button onClick={onAdd} href="#" className="btn btn-primary d-block">
-                <NavLink to="#" className="text-white">
+              <button onClick={onAddCart} className="btn btn-primary d-block">
+                {/* <NavLink to="#" className="text-white"> */}
                   Agregar al carrito
-                </NavLink>
+                {/* </NavLink> */}
               </button>
             </div>
           </div>
