@@ -1,5 +1,4 @@
 import ItemCount from "./ItemCount"
-import {withRouter} from "react-router-dom"
 
 const ItemDetail = ({detail, onAddCart}) => {
 
