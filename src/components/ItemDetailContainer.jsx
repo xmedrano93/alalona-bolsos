@@ -1,26 +1,33 @@
-import {useEffect, useState} from "react"
+import {useEffect, useState, useContext} from "react"
 import ItemDetail from "./ItemDetail"
 import listado from "./listProducts.json"
-import {useParams, withRouter} from "react-router-dom"
+import {useParams} from "react-router-dom"
+import {Store} from '../store/CartContext'
 
-
-const ItemDetailContainer = (propsCart) =>{
-
-    const {history} = propsCart;
-
-    const onAddCart = () =>{
-      
-      history.push("/cart")
-  }
-
-    const {id_detail} = useParams();
-    console.log(id_detail)
+const ItemDetailContainer = () =>{
+    const[data, setData] = useContext(Store)
     const [detail, setDetail] = useState([])
+    const {id_detail} = useParams();
+
+
+
+//     const onAddCart = () =>{
+//         setData({...data,
+//                 items: [data.items, detail]})
+
+//         history.push("/cart")
+//         console.log(data)
+//         console.log(detail)
+
+//   }
+
+
+
 
     const getItems = new Promise((resolve) =>{
         setTimeout(() =>{
         resolve(listado[id_detail])
-        }, 2000); 
+        }, 500); 
     })
     
         useEffect(() =>{
@@ -28,12 +35,12 @@ const ItemDetailContainer = (propsCart) =>{
                 setDetail(resultDetail)
             })
         },[])
-
+    
     return(
         
-        <ItemDetail detail={detail} onAddCart={onAddCart}/> 
+        <ItemDetail detail={detail} stock={detail.stock} /> 
      
     )
 }
 
-export default withRouter(ItemDetailContainer);
+export default ItemDetailContainer;

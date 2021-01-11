@@ -82,8 +82,8 @@
     },
     {
         "id":8,
-        "title":"Neceser verde",
         "category":"neceser",
+        "title":"Neceser verde",
         "price":1200,
         "pictureUrl":"../assets/product4.jpg",
         "stock":20,

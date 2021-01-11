@@ -13,13 +13,12 @@ const ItemList = () =>{
     const getProducts = new Promise((resolve) =>{
         setTimeout(() => {
             resolve(listProducts)
-        }, 2000);
+        }, 500);
     })
 
 
     
     useEffect(() =>{
-        console.log(categoryLink)
         getProducts.then(itemMap =>{
             setResult(itemMap)}
             
@@ -62,6 +61,7 @@ const ItemList = () =>{
                             alt={items.alt}
                             id={items.id}
                             categoryLink={categoryLink}
+                            key={items.id}
                             />
                     ))
                     } 
