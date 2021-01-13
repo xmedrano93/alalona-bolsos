@@ -1,30 +1,38 @@
-import { useContext, useState } from "react";
+import { useContext } from "react";
 import { Store } from "../store/CartContext";
-import ItemCount from '../components/ItemCount'
 
-const Cart = (count) =>{
+const Cart = (id) =>{
     const [data, setData] = useContext(Store);
     const clear = () =>{ setData({
-        cantidad: [],
+        cantidad: 0,
         items: [],
     }) }
+    console.log(data.items.length)
+    console.log(data.items[{id}])
+    const removeItem= ()=>{
+        console.log(data.items.id)
+        console.log(data.items )
+        setData({
+            items: [...data.items].splice(),
+            
+        })
 
-    
-    // setData({cantidad: [...cantidad]})
-    console.log(data)
+    }
 
     return(
     <>    
         <h2>Estamos en el Cart</h2>
         {
-            data.items?.map(item =>  
-                                        <li key={item.id}>
+            data.items?.map(item => 
+                                        <div key={item.id}>
                                             <h3>{item.title}</h3>
                                             <h4>${item.price}</h4>
-                                            <ItemCount stock={item.stock}/>
-                                        </li>)
+                                            <h5>Cantidad:{item.qtyUn}</h5>
+                                            <button onClick={removeItem}>Borrar este item(id{item.id})</button>
+                                        </div> )
                                     
-        }{console.log(count)}
+        }
+      
         <button onClick={clear}>Borrar todos los items</button>
 
         

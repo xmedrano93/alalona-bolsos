@@ -1,6 +1,7 @@
 [
     {
         "id":0,
+        "qtyUn": 0,
         "category":"lona",
         "title":"Lona verde",
         "price":600,
@@ -11,6 +12,7 @@
     },
     {
         "id":1,
+        "qtyUn": 0,
         "category":"lona",
         "title":"Lona rosada",
         "price":800,
@@ -22,6 +24,7 @@
     },
     {
         "id":2,
+        "qtyUn": 0,
         "category":"lona",
         "title":"Lona amarilla",
         "price":1000,
@@ -32,6 +35,7 @@
     },
     {
         "id":3,
+        "qtyUn": 0,
         "category":"lona",
         "title":"Lona azul",
         "price":1200,
@@ -42,6 +46,7 @@
     },
     {
         "id":4,
+        "qtyUn": 0,
         "category":"lona",
         "title":"Lona violeta",
         "price":1200,
@@ -52,6 +57,7 @@
     },
     {
         "id":5,
+        "qtyUn": 0,
         "category":"lona",
         "title":"Lona bordó",
         "price":1200,
@@ -62,6 +68,7 @@
     },
     {
         "id":6,
+        "qtyUn": 0,
         "category":"mochila",
         "title":"Mochila roja",
         "price":1200,
@@ -72,6 +79,7 @@
     },
     {
         "id":7,
+        "qtyUn": 0,
         "category":"mochila",
         "title":"Mochila azul",
         "price":1200,
@@ -82,6 +90,7 @@
     },
     {
         "id":8,
+        "qtyUn": 0,
         "category":"neceser",
         "title":"Neceser verde",
         "price":1200,
@@ -92,6 +101,7 @@
     },
     {
         "id":9,
+        "qtyUn": 0,
         "category":"neceser",
         "title":"Neceser azul",
         "price":1200,

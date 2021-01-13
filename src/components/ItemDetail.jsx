@@ -2,20 +2,30 @@ import {useHistory} from 'react-router-dom'
 import {useContext, useState} from 'react'
 import {Store} from '../store/CartContext'
 
-const ItemDetail = ({detail, stock}) => {
+const ItemDetail = ({detail, stock, id}) => {
   const history = useHistory();
   const [data, setData] = useContext(Store)
   const [count, setCount] = useState (0)
-
+  
   const onAddCart = () =>{
-    setData({
-            cantidad: [...data.cantidad, count],
-            items: [...data.items, detail],
-          })
+   
+if(data.items[id]){
+  console.log("Ya existe")
+  data.items.qtyUn = count
+  detail.qtyUn = data.items.qtyUn
+  history.push("/cart")
+}else{
 
+    data.items.qtyUn = count
+    detail.qtyUn = data.items.qtyUn
+    setData({...data,
+      cantidad: data.cantidad + count,
+      items: [...data.items, detail],
+    }) 
     history.push("/cart")
   }
-  
+
+  }
   const add = () =>{
       if(count < stock){
       setCount (count + 1) ;
@@ -39,7 +49,6 @@ const ItemDetail = ({detail, stock}) => {
           <h5 className="card-title">${detail.price}</h5>
           <h6 className="card-title">{detail.description}</h6>
           <h2 className="text-success d-inline-block m-2">
-            {/* <ItemCount stock={detail.stock} /> */}
             <button onClick={less} className="btn btn-light">-</button>
                 <p className="d-inline-block m-3 pl-4 pr-4" >{count}</p>
             <button onClick={add} className="btn btn-light">+</button>

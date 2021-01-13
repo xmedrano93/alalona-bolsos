@@ -11,8 +11,8 @@ import {Store} from "./store/CartContext"
 function App() {
 const [data, setData] = useState({
   items: [],
-  cantidad:[],
-})
+  cantidad:0,
+});
 
   return (
     <>
