@@ -1,24 +1,20 @@
 import { useContext } from "react";
 import { Store } from "../store/CartContext";
 
-const Cart = (id) =>{
+const Cart = () =>{
     const [data, setData] = useContext(Store);
     const clear = () =>{ setData({
         cantidad: 0,
         items: [],
     }) }
-    console.log(data.items.length)
-    console.log(data.items[{id}])
-    const removeItem= ()=>{
-        console.log(data.items.id)
-        console.log(data.items )
-        setData({
-            items: [...data.items].splice(),
-            
-        })
+    const removeItem = (asd)=>{
+       console.log(data.items)
 
+    // const deleteProductCart = setData.items.slice(data.items.id,1);
+    // setData(...data.items, deleteProductCart)
+    // console.log(data.items)
     }
-
+    console.log(data.items)
     return(
     <>    
         <h2>Estamos en el Cart</h2>
@@ -28,7 +24,7 @@ const Cart = (id) =>{
                                             <h3>{item.title}</h3>
                                             <h4>${item.price}</h4>
                                             <h5>Cantidad:{item.qtyUn}</h5>
-                                            <button onClick={removeItem}>Borrar este item(id{item.id})</button>
+                                            <button onClick={() =>removeItem(item.id)}>Borrar este item(id{item.id})</button>
                                         </div> )
                                     
         }

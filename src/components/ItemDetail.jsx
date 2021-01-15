@@ -9,20 +9,20 @@ const ItemDetail = ({detail, stock, id}) => {
   
   const onAddCart = () =>{
    
-if(data.items[id]){
-  console.log("Ya existe")
-  data.items.qtyUn = count
-  detail.qtyUn = data.items.qtyUn
-  history.push("/cart")
-}else{
+      if(data.items[id]){
+        console.log("Ya existe")
+        data.items.qtyUn = count
+        detail.qtyUn = data.items.qtyUn
+        history.push("/cart")
+      }else{
 
-    data.items.qtyUn = count
-    detail.qtyUn = data.items.qtyUn
-    setData({...data,
-      cantidad: data.cantidad + count,
-      items: [...data.items, detail],
-    }) 
-    history.push("/cart")
+          data.items.qtyUn = count
+          detail.qtyUn = data.items.qtyUn
+          setData({...data,
+            cantidad: data.cantidad + count,
+            items: [...data.items, detail]       
+          }) 
+          history.push("/cart")
   }
 
   }

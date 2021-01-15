@@ -2,10 +2,8 @@ import {useEffect, useState, useContext} from "react"
 import ItemDetail from "./ItemDetail"
 import listado from "./listProducts.json"
 import {useParams} from "react-router-dom"
-import {Store} from '../store/CartContext'
 
 const ItemDetailContainer = () =>{
-    const[data, setData] = useContext(Store)
     const [detail, setDetail] = useState([])
     const {id_detail} = useParams();
 
