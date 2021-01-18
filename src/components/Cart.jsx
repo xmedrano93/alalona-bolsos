@@ -7,32 +7,50 @@ const Cart = () =>{
         cantidad: 0,
         items: [],
     }) }
-    const removeItem = (asd)=>{
-       console.log(data.items)
-
-    // const deleteProductCart = setData.items.slice(data.items.id,1);
-    // setData(...data.items, deleteProductCart)
-    // console.log(data.items)
+    const removeItems = productId =>{const productoFuera = data.items.filter(prod => prod.id !== productId);
+        setData({items: productoFuera,
+                cantidad: data.cantidad - data.items[productId]?.qtyUn})
+        console.log(data.items[productId]?.qtyUn)
     }
-    console.log(data.items)
+        console.log(data)
+
+if(removeItems){
     return(
-    <>    
+    <>   
         <h2>Estamos en el Cart</h2>
         {
-            data.items?.map(item => 
+             data.items?.map(item => 
                                         <div key={item.id}>
                                             <h3>{item.title}</h3>
                                             <h4>${item.price}</h4>
                                             <h5>Cantidad:{item.qtyUn}</h5>
-                                            <button onClick={() =>removeItem(item.id)}>Borrar este item(id{item.id})</button>
+                                            <button onClick={()=> removeItems(item.id)}>Borrar este item(id{item.id})</button>
                                         </div> )
-                                    
-        }
-      
+        } 
+       
         <button onClick={clear}>Borrar todos los items</button>
 
         
     </>
-    )
+    )} else{
+        return(
+            <>   
+                <h2>Estamos en el Cart</h2>
+                {
+                     data.items?.map(item => 
+                                                <div key={item.id}>
+                                                    <h3>{item.title}</h3>
+                                                    <h4>${item.price}</h4>
+                                                    <h5>Cantidad:{item.qtyUn}</h5>
+                                                    <button onClick={()=> removeItems(item.id)}>Borrar este item(id{item.id})</button>
+                                                </div> )
+                } 
+               
+                <button onClick={clear}>Borrar todos los items</button>
+        
+                
+            </>  
+        )
+    }
 }
 export default Cart;

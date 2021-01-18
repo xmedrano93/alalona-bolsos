@@ -23,9 +23,8 @@ const ItemDetail = ({detail, stock, id}) => {
             items: [...data.items, detail]       
           }) 
           history.push("/cart")
-  }
+  }}
 
-  }
   const add = () =>{
       if(count < stock){
       setCount (count + 1) ;

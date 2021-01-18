@@ -1,7 +1,6 @@
 import { NavLink } from "react-router-dom";
-import ItemCount from "./ItemCount";
 
-function Item ({stock, title, price, key, alt, id}){
+function Item ({title, price, alt, id, key}){
 
     return(
         <>

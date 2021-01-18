@@ -12,7 +12,6 @@ function App() {
 const [data, setData] = useState({
   items: [],
   cantidad:0,
-
 });
 
   return (

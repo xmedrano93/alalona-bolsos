@@ -3,7 +3,6 @@ import {useState, useContext} from "react";
 
 
 function ItemCount ({stock}) {
-    const[data, setData] = useContext(Store)
     const [count, setCount] = useState (0)
 
 
