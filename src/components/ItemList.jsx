@@ -2,27 +2,32 @@ import {useEffect, useState} from "react"
 import listProducts from "./listProducts.json"
 import Item from "./Item"
 import {useParams} from "react-router-dom"
+import { getFirestore } from "../firebase/Firebase"
 
 
 
 const ItemList = () =>{
-
     const {categoryLink} = useParams();
     const [result, setResult] = useState([])
+    const fs = getFirestore();
 
-    const getProducts = new Promise((resolve) =>{
-        setTimeout(() => {
-            resolve(listProducts)
-        }, 500);
-    })
+    const getProducts = () =>{
+        fs.collection('productos').get()
+        .then(docs =>{
+            let arr = [];
+            docs.forEach(doc=>{
+                arr.push({id: doc.id, data: doc.data()})
+            })
+            setResult(arr)
+        })
+        .catch(e => console.log(e))
+    }
 
 
     
     useEffect(() =>{
-        getProducts.then(itemMap =>{
-            setResult(itemMap)}
-            
-    )}, [categoryLink]);
+        getProducts()
+    }, []);
 
     if(categoryLink){
     return(
@@ -30,13 +35,13 @@ const ItemList = () =>{
      
         <>
             
-            {result.filter(item =>(item.category === categoryLink)).map(items =>(
+            {result.filter(item =>(item.data.category === categoryLink)).map(items =>(
                     <Item
-                    title={items.title}
-                    price={items.price}
-                    stock={items.stock}
-                    pictureUrl={items.pictureUrl}
-                    alt={items.alt}
+                    title={items.data.title}
+                    price={items.data.price}
+                    stock={items.data.stock}
+                    pictureUrl={items.data.pictureUrl}
+                    alt={items.data.alt}
                     id={items.id}
                     categoryLink={categoryLink}
                     key={items.id}
@@ -54,11 +59,11 @@ const ItemList = () =>{
                     
                     {result.map(items =>(
                             <Item
-                            title={items.title}
-                            price={items.price}
-                            stock={items.stock}
-                            pictureUrl={items.pictureUrl}
-                            alt={items.alt}
+                            title={items.data.title}
+                            price={items.data.price}
+                            stock={items.data.stock}
+                            pictureUrl={items.data.pictureUrl}
+                            alt={items.data.alt}
                             id={items.id}
                             categoryLink={categoryLink}
                             key={items.id}
