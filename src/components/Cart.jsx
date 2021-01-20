@@ -15,10 +15,9 @@ const Cart = () =>{
         console.log(data.items[productId]?.qtyUn)
     }
         console.log(data)
-
+    if(data.items.length){
     return(
     <>   
-        <h2>Estamos en el Cart</h2>
         {
              data.items?.map(item => 
                                         <div key={item.id}>
@@ -33,7 +32,10 @@ const Cart = () =>{
 
         
     </>
-    )
+    )}else{
+        return(
+            <h2 className="text-center">El carro está vacío, por favor elige un producto</h2>        )
+    }
 
 // else{
 //         return(
@@ -55,5 +57,6 @@ const Cart = () =>{
 //             </>  
 //         )
 //     }
+    
 }
 export default Cart;
