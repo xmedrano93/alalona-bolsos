@@ -33,7 +33,6 @@ const ItemDetailContainer = () =>{
     }
     })
     .catch(e => console.log(e))
-    console.log(detail.data)
     }
 
     

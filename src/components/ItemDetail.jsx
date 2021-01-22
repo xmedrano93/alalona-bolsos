@@ -18,10 +18,11 @@ const ItemDetail = ({detail, stock, id}) => {
 
           data.items.qtyUn = count
           detail.qtyUn = data.items.qtyUn
+          let totalProducto = detail.price * detail.qtyUn  
           setData({...data,
             cantidad: data.cantidad + count,
             items: [...data.items, detail],  
-            precioTotal: data.precioTotal + (detail.price + detail.qtyUn)     
+            precioTotal: data.precioTotal + totalProducto 
           }) 
           history.push("/cart")
   }}

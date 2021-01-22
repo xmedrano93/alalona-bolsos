@@ -4,18 +4,24 @@ import {Link} from 'react-router-dom'
 
 const Cart = () =>{
     const [data, setData] = useContext(Store);
+
     const clear = () =>{ setData({
         cantidad: 0,
         items: [],
+        precioTotal: 0,
     }) }
     const removeItems = productId =>{const productoFuera = data.items.filter(prod => prod.id !== productId);
-
+        const productoEliminado = data.items.filter(itemEliminado => itemEliminado.id == productId);
+        const cantidadEliminada = productoEliminado.map(item => item.qtyUn)
+        const totalEliminado = productoEliminado.map(item => item.qtyUn * item.price)
+        console.log(totalEliminado)
         setData({items: productoFuera,
-                cantidad: data.cantidad - data.items[productId]?.qtyUn})
-    
-        console.log(data.items[productId]?.qtyUn)
+                cantidad: data.cantidad - cantidadEliminada,
+                precioTotal: data.precioTotal - totalEliminado,
+        })
     }
         console.log(data)
+     
     if(data.items.length){
     return(
     <>   
@@ -38,6 +44,9 @@ const Cart = () =>{
         } 
        <div className="container">
         <button className="mt-2" onClick={clear}>Borrar todos los items</button>
+       </div>
+       <div className='text-center'>
+            <h3>El total de la compra es ${data.precioTotal}</h3>
        </div>
        <div className="text-center">
         <Link to='/checkout'> <button className="btn btn-primary">Finalizar compra</button>  </Link>
