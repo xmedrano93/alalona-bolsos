@@ -1,5 +1,6 @@
 import { useContext } from "react";
 import { Store } from "../store/CartContext";
+import {Link} from 'react-router-dom'
 
 const Cart = () =>{
     const [data, setData] = useContext(Store);
@@ -20,15 +21,28 @@ const Cart = () =>{
     <>   
         {
              data.items?.map(item => 
-                                        <div key={item.id}>
-                                            <h3>{item.title}</h3>
-                                            <h4>${item.price}</h4>
-                                            <h5>Cantidad:{item.qtyUn}</h5>
-                                            <button onClick={()=> removeItems(item.id)}>Borrar este item(id{item.id})</button>
+                                        <div className="container" key={item.id}>
+                                            <div>
+                                                <img className="rounded mt-2" style={{width:'20vw'}} src={`/images/${item.imgUrl}`}/>
+                                            </div>
+                                            <div>
+                                                <h3>{item.title}</h3>
+                                                <h4>Precio por unidad: ${item.price}</h4>
+                                                <h5>Cantidad:{item.qtyUn}</h5>
+                                                <h5>Precio total Item: ${item.qtyUn * item.price}</h5>
+                                                <button onClick={()=> removeItems(item.id)}>Borrar este item</button>
+                                            </div>
+                                            
+
                                         </div> )
         } 
-       
-        <button onClick={clear}>Borrar todos los items</button>
+       <div className="container">
+        <button className="mt-2" onClick={clear}>Borrar todos los items</button>
+       </div>
+       <div className="text-center">
+        <Link to='/checkout'> <button className="btn btn-primary">Finalizar compra</button>  </Link>
+       </div>
+        
 
         
     </>

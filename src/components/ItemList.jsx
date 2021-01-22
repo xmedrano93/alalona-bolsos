@@ -40,7 +40,7 @@ const ItemList = () =>{
                     title={items.data.title}
                     price={items.data.price}
                     stock={items.data.stock}
-                    pictureUrl={items.data.pictureUrl}
+                    img={items.data.imgUrl}
                     alt={items.data.alt}
                     id={items.id}
                     categoryLink={categoryLink}
@@ -62,7 +62,7 @@ const ItemList = () =>{
                             title={items.data.title}
                             price={items.data.price}
                             stock={items.data.stock}
-                            pictureUrl={items.data.pictureUrl}
+                            img={items.data.imgUrl}
                             alt={items.data.alt}
                             id={items.id}
                             categoryLink={categoryLink}

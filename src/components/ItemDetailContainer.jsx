@@ -4,6 +4,7 @@ import listado from "./listProducts.json"
 import {useParams} from "react-router-dom"
 import {getFirestore} from '../firebase/Firebase'
 
+
 const ItemDetailContainer = () =>{
     const [detail, setDetail] = useState([])
     const {id_detail} = useParams();

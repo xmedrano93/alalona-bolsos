@@ -5,7 +5,7 @@ import {Store} from '../store/CartContext'
 const ItemDetail = ({detail, stock, id}) => {
   const history = useHistory();
   const [data, setData] = useContext(Store)
-  const [count, setCount] = useState (0)
+  const [count, setCount] = useState (1)
   
   const onAddCart = () =>{
    
@@ -20,7 +20,8 @@ const ItemDetail = ({detail, stock, id}) => {
           detail.qtyUn = data.items.qtyUn
           setData({...data,
             cantidad: data.cantidad + count,
-            items: [...data.items, detail]       
+            items: [...data.items, detail],  
+            precioTotal: data.precioTotal + (detail.price + detail.qtyUn)     
           }) 
           history.push("/cart")
   }}

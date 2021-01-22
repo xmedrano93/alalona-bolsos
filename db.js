@@ -1,7 +1,18 @@
-[
+const firebase = require('firebase');
+require('firebase/firestore');
+
+firebase.initializeApp({
+    apiKey: "AIzaSyA49CWvodWCO7gjgZl72ghmsK--ghEcBmE",
+    authDomain: "alalona-bolsos.firebaseapp.com",
+    projectId: "alalona-bolsos",
+});
+
+var db = firebase.firestore();
+
+var productos = [
     {
         "id":0,
-        "qtyUn": 1,
+        "qtyUn": 0,
         "category":"lona",
         "title":"Lona verde",
         "price":600,
@@ -12,7 +23,7 @@
     },
     {
         "id":1,
-        "qtyUn": 1,
+        "qtyUn": 0,
         "category":"lona",
         "title":"Lona rosada",
         "price":800,
@@ -24,7 +35,7 @@
     },
     {
         "id":2,
-        "qtyUn": 1,
+        "qtyUn": 0,
         "category":"lona",
         "title":"Lona amarilla",
         "price":1000,
@@ -35,7 +46,7 @@
     },
     {
         "id":3,
-        "qtyUn": 1,
+        "qtyUn": 0,
         "category":"lona",
         "title":"Lona azul",
         "price":1200,
@@ -46,7 +57,7 @@
     },
     {
         "id":4,
-        "qtyUn": 1,
+        "qtyUn": 0,
         "category":"lona",
         "title":"Lona violeta",
         "price":1200,
@@ -57,7 +68,7 @@
     },
     {
         "id":5,
-        "qtyUn": 1,
+        "qtyUn": 0,
         "category":"lona",
         "title":"Lona bordó",
         "price":1200,
@@ -68,7 +79,7 @@
     },
     {
         "id":6,
-        "qtyUn": 1,
+        "qtyUn": 0,
         "category":"mochila",
         "title":"Mochila roja",
         "price":1200,
@@ -79,7 +90,7 @@
     },
     {
         "id":7,
-        "qtyUn": 1,
+        "qtyUn": 0,
         "category":"mochila",
         "title":"Mochila azul",
         "price":1200,
@@ -90,7 +101,7 @@
     },
     {
         "id":8,
-        "qtyUn": 1,
+        "qtyUn": 0,
         "category":"neceser",
         "title":"Neceser verde",
         "price":1200,
@@ -101,13 +112,34 @@
     },
     {
         "id":9,
-        "qtyUn": 1,
+        "qtyUn": 0,
         "category":"neceser",
         "title":"Neceser azul",
         "price":1200,
-        "imgUrl":"product4.jpg",
+        "imgUrl":product4.jpg,
         "stock":20,
         "alt":"Neceser azul",
         "description":"Producto de tela, ideal para salidas de picnic. Muy cómodo para usarlo en todo momento. Gran capacidad de almacenaje"
     }
 ]
+
+productos.forEach((obj) =>{
+    db.collection('productos')
+    .add({
+        id :obj.id,
+        qtyUn: obj.qtyUn,
+        category: obj.category,
+        title: obj.title,
+        price: obj.price,
+        imgUrl: obj.imgUrl,
+        stock: obj.stock,
+        alt: obj.alt,
+        description: obj.description,
+    })
+    .then((docRef)=>{
+        console.log('Producto registrado bajo ID:', docRef.id);
+    })
+    .catch((error)=>{
+        console.log('Error al agregar producto:', error);
+    });
+});

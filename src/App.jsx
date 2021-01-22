@@ -6,12 +6,14 @@ import ItemListContainer from "./components/ItemListContainer";
 import ItemDetailContainer from "./components/ItemDetailContainer"
 import Cart from "./components/Cart";
 import {Store} from "./store/CartContext"
+import Checkout from './components/Checkout'
 
 
 function App() {
 const [data, setData] = useState({
   items: [],
   cantidad:0,
+  precioTotal:0,
 });
 
   return (
@@ -24,6 +26,9 @@ const [data, setData] = useState({
             <Switch>
               <Route exact path="/">
                 <ItemListContainer />
+              </Route>
+              <Route path='/checkout'>
+                <Checkout />
               </Route>
               <Route path="/detail/:id_detail?">
               <ItemDetailContainer />
