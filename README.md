@@ -1,5 +1,9 @@
 El proyecto está basado en un emprendimiento de comercialización de bolsos, mochilas y neceseres ideales para picnic en plazas o este tipo de actividades. Los bolsos y mochilas se hacen lonas al abrirse para poder sentarse sobre ellas. Todo fabricado de forma artenasal.
 
+Como librería externa se utilizó Bootstrap para darle estilo a todo el sitio.
+- https://cdn.jsdelivr.net/npm/bootstrap@5.0.0-beta1/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-giJF6kkoqNQ00vy+HMDP7azOuL0xtbfIcaT9wjKHr8RbDVddVHyTfAAsrekwKmP1" crossorigin="anonymous
+- "https://cdn.jsdelivr.net/npm/bootstrap@5.0.0-beta1/dist/js/bootstrap.bundle.min.js" integrity="sha384-ygbV9kiqUc6oa4msXn9868pTtWMgiQaeYH7/t7LECLbyPA2x65Kgf80OJFdroafW" crossorigin="anonymous"
+
 
 
 
