@@ -1,5 +1,4 @@
 import {useEffect, useState} from "react"
-import listProducts from "./listProducts.json"
 import Item from "./Item"
 import {useParams} from "react-router-dom"
 import { getFirestore } from "../firebase/Firebase"
@@ -34,7 +33,7 @@ const ItemList = () =>{
     result.length?
      
         <>
-            
+          
             {result.filter(item =>(item.data.category === categoryLink)).map(items =>(
                     <Item
                     title={items.data.title}
@@ -44,7 +43,6 @@ const ItemList = () =>{
                     alt={items.data.alt}
                     id={items.id}
                     categoryLink={categoryLink}
-                    key={items.id}
                     />
             ))
             } 
@@ -56,7 +54,10 @@ const ItemList = () =>{
             result.length?
              
                 <>
-                    
+                    <h2 className='text-center pt-1'>
+                        Nuestros productos
+                    </h2>
+                    <div className='text-center'>
                     {result.map(items =>(
                             <Item
                             title={items.data.title}
@@ -70,6 +71,7 @@ const ItemList = () =>{
                             />
                     ))
                     } 
+                    </div>
                 </> 
                 :
                 <div className="align-items-center justify-content-center m-3 spinner-border" />

@@ -2,7 +2,7 @@ import {useHistory} from 'react-router-dom'
 import {useContext, useState} from 'react'
 import {Store} from '../store/CartContext'
 
-const ItemDetail = ({detail, stock, id, img}) => {
+const ItemDetail = ({detail, stock, img}) => {
   const history = useHistory();
   const [data, setData] = useContext(Store)
   const [count, setCount] = useState (1)
@@ -10,7 +10,7 @@ const ItemDetail = ({detail, stock, id, img}) => {
   const onAddCart = (e) =>{
 
    const itemId = data.items.map(item => item.id)
-  const itemSearch = itemId.find(itemZ => itemZ == detail.id)
+  const itemSearch = itemId.find(itemZ => itemZ === detail.id)
 
       if(itemSearch){
         console.log("Ya existe")
@@ -45,7 +45,7 @@ const ItemDetail = ({detail, stock, id, img}) => {
     <div className="container-fluid" key={detail.id}>
       <div className="row d-inline-block m-1">
         <div className="card d-inline-block ">
-              <img className="card-img-top"  style={{width: "40vw"}} src={`/images/${img}`} alt="img test"/>{console.log(detail.imgUrl)}
+              <img className="card-img-top"  style={{width: "38vw", height:'60vh'}} src={`/images/${img}`} alt={detail.title}/>
             </div>
       </div>
       <div className="row d-inline-block m-2">

@@ -1,5 +1,4 @@
-import {Store} from '../store/CartContext'
-import {useState, useContext} from "react";
+import {useState} from "react";
 
 
 function ItemCount ({stock}) {

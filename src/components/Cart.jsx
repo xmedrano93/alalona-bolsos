@@ -11,7 +11,7 @@ const Cart = () =>{
         precioTotal: 0,
     }) }
     const removeItems = productId =>{const productoFuera = data.items.filter(prod => prod.id !== productId);
-        const productoEliminado = data.items.filter(itemEliminado => itemEliminado.id == productId);
+        const productoEliminado = data.items.filter(itemEliminado => itemEliminado.id === productId);
         const cantidadEliminada = productoEliminado.map(item => item.qtyUn)
         const totalEliminado = productoEliminado.map(item => item.qtyUn * item.price)
         console.log(totalEliminado)
@@ -20,7 +20,6 @@ const Cart = () =>{
                 precioTotal: data.precioTotal - totalEliminado,
         })
     }
-        console.log(data)
      
     if(data.items?.length){
     return(

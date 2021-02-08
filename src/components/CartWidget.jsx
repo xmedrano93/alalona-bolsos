@@ -5,14 +5,14 @@ import {Store} from '../../src/store/CartContext'
 
 
 function CartWidget (){
-    const [data, setData] = useContext(Store);
+    const [data] = useContext(Store);
 
     return (
         <>
-        <a className='cart'>
+        <div className='cart'>
             <img alt="carrito"src={carrito}></img>
             <span className='cart_menu_num"'>{data.cantidad}</span>
-        </a>
+        </div>
             
         </>
     )

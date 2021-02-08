@@ -2,12 +2,10 @@ import {useState, useContext} from 'react'
 import {Store} from '../../src/store/CartContext'
 import {getFirestore} from '../firebase/Firebase'
 import firebase from 'firebase/app';
-import {NavLink, useHistory} from 'react-router-dom'
+import {NavLink} from 'react-router-dom'
 
 
 const Checkout = ()=>{
-    const history = useHistory();
-
     const db = getFirestore();
     const [data, setData] = useContext(Store);
     const [venta, completoVenta] = useState(false);
