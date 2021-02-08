@@ -1,0 +1,22 @@
+
+.NavBarStyle{
+    position: relative;
+    z-index: 1;
+}
+.sticky-top{
+    position: absolute;
+    z-index: 2;
+}
+.cartItem{
+    position:absolute;
+    left: 85%;
+    top: 2%;
+    z-index: 5;
+}
+.showCart{
+    margin-top: 1vw;
+}
+.cartItemMap{
+    background-color: white;
+    border-radius: 1vw;
+}

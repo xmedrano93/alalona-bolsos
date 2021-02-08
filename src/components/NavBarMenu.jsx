@@ -1,15 +1,18 @@
 import { NavLink } from "react-router-dom";
 import CartWidget from "./CartWidget";
 import {NavDropdown, Form, FormControl, Button, Navbar, Nav} from "react-bootstrap"
-import {useState} from "react"
+import {useState, useContext} from "react"
+import {Store} from '../../src/store/CartContext'
 import {Fade} from "react-bootstrap"
+import '../styles/NavMenuBar.css'
 
 function NavBarMenu() {
-
+  const [data, setData] = useContext(Store);
   const [openCart, setOpenCart] = useState(false);
 
   return (
     <>
+    <div className='NavBarStyle'>
       <Navbar className="sticky-top" bg="light" expand="lg">
         <Navbar.Brand><NavLink to="/">Alalona!</NavLink></Navbar.Brand>
         <Navbar.Toggle aria-controls="basic-navbar-nav" />
@@ -24,24 +27,24 @@ function NavBarMenu() {
             </NavDropdown>
           </Nav>
 
-          {/* Inicia el Cart */}
-          <div className="m-2">
-            <a onClick={() => setOpenCart(!openCart)} aria-controls="example-fade-text" aria-expanded={openCart}><CartWidget/>
+        </Navbar.Collapse>
+      </Navbar>
+    </div>
+                {/* Inicia el Cart */}
+                <div className="float-right mr-3 cartItem">
+            <a onClick={() => setOpenCart(!openCart)} aria-controls="example-fade-text" aria-expanded={openCart}>
+              <CartWidget/>
             </a>
             <Fade in={openCart}>
-              <div id="example-fade-text">
-              Aquí habrá productos
+              <div id="example-fade-text" className='cartItemMap'>
+              {data.items?.map(cartItem =>
+                <h6 className='showCart'>{cartItem.title} Cantidad:{cartItem.qtyUn}</h6>
+                )}
+                {data.items.length ==0? <h5></h5>:<NavLink to='/cart'><button className='btn btn-info'>Ir al carrito</button></NavLink>}
               </div>
             </Fade>
           </div>
           {/* Finaliza el Cart */}
-
-          <Form inline>
-            <FormControl type="text" placeholder="Buscar..." className="mr-sm-2" />
-            <Button variant="outline-success">Buscar</Button>
-          </Form>
-        </Navbar.Collapse>
-      </Navbar>
     </>
   );
 }

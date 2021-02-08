@@ -7,6 +7,7 @@ import ItemDetailContainer from "./components/ItemDetailContainer"
 import Cart from "./components/Cart";
 import {Store} from "./store/CartContext"
 import Checkout from './components/Checkout'
+import Error404 from './components/Error404'
 
 
 function App() {
@@ -30,7 +31,7 @@ const [data, setData] = useState({
               <Route path='/checkout'>
                 <Checkout />
               </Route>
-              <Route path="/detail/:id_detail?">
+              <Route exact path="/detail/:id_detail?">
               <ItemDetailContainer />
               </Route>
               <Route path="/category/:categoryLink?">
@@ -39,6 +40,10 @@ const [data, setData] = useState({
               <Route path="/cart">
                 <Cart />
               </Route>
+              <Route path="*">
+                <Error404 />
+              </Route>
+
             
           </Switch>
         </BrowserRouter>

@@ -1,0 +1,14 @@
+.cart{
+    position: relative;
+}
+.cart_menu_num{
+    position: absolute;
+    top: 10;
+    left: 55%;
+    width: 15px;
+    height: 15px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    padding: 2px;
+}

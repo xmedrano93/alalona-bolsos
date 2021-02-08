@@ -2,18 +2,19 @@ import {useHistory} from 'react-router-dom'
 import {useContext, useState} from 'react'
 import {Store} from '../store/CartContext'
 
-const ItemDetail = ({detail, stock, id}) => {
+const ItemDetail = ({detail, stock, id, img}) => {
   const history = useHistory();
   const [data, setData] = useContext(Store)
   const [count, setCount] = useState (1)
   
-  const onAddCart = () =>{
-   
-      if(data.items[id]){
+  const onAddCart = (e) =>{
+
+   const itemId = data.items.map(item => item.id)
+  const itemSearch = itemId.find(itemZ => itemZ == detail.id)
+
+      if(itemSearch){
         console.log("Ya existe")
-        data.items.qtyUn = count
-        detail.qtyUn = data.items.qtyUn
-        history.push("/cart")
+        alert('Ya existe producto en el carrito, eliminelo y vuelvalo a cargar')
       }else{
 
           data.items.qtyUn = count
@@ -24,7 +25,10 @@ const ItemDetail = ({detail, stock, id}) => {
             items: [...data.items, detail],  
             precioTotal: data.precioTotal + totalProducto 
           }) 
+
+
           history.push("/cart")
+ 
   }}
 
   const add = () =>{
@@ -41,7 +45,7 @@ const ItemDetail = ({detail, stock, id}) => {
     <div className="container-fluid" key={detail.id}>
       <div className="row d-inline-block m-1">
         <div className="card d-inline-block ">
-              <img className="card-img-top" src="https://placehold.it/350x350" alt="img test"/>
+              <img className="card-img-top"  style={{width: "40vw"}} src={`/images/${img}`} alt="img test"/>{console.log(detail.imgUrl)}
             </div>
       </div>
       <div className="row d-inline-block m-2">
@@ -54,7 +58,7 @@ const ItemDetail = ({detail, stock, id}) => {
                 <p className="d-inline-block m-3 pl-4 pr-4" >{count}</p>
             <button onClick={add} className="btn btn-light">+</button>
           </h2>
-          <button onClick={onAddCart} className="btn btn-primary d-block m-3">
+          <button onClick={()=> onAddCart(detail.id)} className="btn btn-primary d-block m-3">
               Agregar al carrito
           </button>
         </div>

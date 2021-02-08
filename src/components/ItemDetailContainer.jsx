@@ -40,12 +40,11 @@ const ItemDetailContainer = () =>{
             // getItems.then(resultDetail =>{
             //     setDeta
             productDetail();
-            productDetail();
         },[])
     
     return(
         
-        <ItemDetail detail={detail} stock={detail.stock} id={detail.id}/> 
+        <ItemDetail detail={detail} stock={detail.stock} id={detail.id} img={detail.imgUrl}/> 
      
     )
 }

@@ -1,6 +1,7 @@
-import { NavLink } from "react-router-dom";
+import { NavLink, useHistory } from "react-router-dom";
 
 function Item ({title, price, alt, id, key, img}){
+    const history = useHistory();
 
 
     return(
